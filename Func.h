@@ -1,1 +1,9 @@
 #pragma once
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int Menu(); //The start of the game.
+string PlayerName(); //Gets the player's name.
+int RoomChoice(); //Gets the choice from inside the room.
