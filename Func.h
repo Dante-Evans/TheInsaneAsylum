@@ -9,4 +9,4 @@ using namespace std;
 int Menu(); //The start of the game.
 void Opening(); //Begins the game after the menu.
 string PlayerName(); //Gets the player's name.
-string RoomChoice(); //Gets the choice from inside the room.
+void RoomChoice(); //Gets the choice from inside the room.
