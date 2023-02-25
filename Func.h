@@ -1,3 +1,5 @@
+//This is the file in which all of my functions are declared.
+
 #pragma once
 #include <iostream>
 #include <string>
