@@ -12,7 +12,7 @@ void main()
 	//local variables
 	bool playAgain = true;
 	int mainMenu = Menu();
-	int roomChoices = RoomChoice();
+	string roomChoices = RoomChoice();
 	
 
 	while (playAgain)
@@ -45,5 +45,6 @@ void main()
 		
 		RoomChoice();
 		
-	}	
+	}
+	
 }

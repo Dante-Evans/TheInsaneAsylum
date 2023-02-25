@@ -32,7 +32,7 @@ string PlayerName() //Function to get the player's name
 	return name; //returns the name of the player.
 }
 
-int RoomChoice() //Function to get the first choice
+string RoomChoice() //Function to get the first choice
 {
 	//Local variable
 	string choice;	
@@ -55,8 +55,9 @@ int RoomChoice() //Function to get the first choice
 	{
 		cout << *choices << endl; //displays the choices that you can choose from.
 		cin >> choice;
+		return choice;
 
-		if (choice == decisions[0])
+		if (choice == decisions[0]) //The first option.
 		{
 			cout << "You pick up the glass of water. You take a sip of water. As the water hits your tongue, you realize\n";
 			cout << "that you were extremely thirsty. You don't know how long you have been unconscious. The water soothes\n";
@@ -67,33 +68,38 @@ int RoomChoice() //Function to get the first choice
 			cout << "of the bed.\n\n";
 			Menu();
 		}
-		else if (choice == decisions[1] && decisions.size() == 4)
+		else if (choice == decisions[1] && decisions.size() == 4) //The second option
 		{
 			cout << "You aren't sure why you would need the notepad but you decide to take it anyway. You slide the notepad\n";
 			cout << "into the waist band of your pants and try to conceal it. Satisfied with your choice you look at the pencil\n";
-			decisions.erase((decisions.begin() + 1));
+			decisions.erase((decisions.begin() + 1));			
 		}
-		else if (choice == decisions[2] && decisions.size() == 4)
+		else if (choice == decisions[2] && decisions.size() == 4) //The third option
 		{
 			cout << "You decided to grab the pencil. You aren't exactly sure why you would need it but you slip it into the arm\n";
 			cout << "of your shirt. You thought about using the pencil to write on the notepad but you couldn't think of anything\n";
-			cout << "to write. You still have a choice. Grab the notepad, drink the water, or leave the room. What do you choose?\n\n";
+			cout << "to write. You still have a choice. Grab the notepad, drink the water, or leave the room. What do you choose?\n\n";			
 		}
-		else if (choice == decisions[3] && decisions.size() == 4)
+		else if (choice == decisions[3] && decisions.size() == 4) //The last option without taking any of the items.
 		{
 			cout << "You decided to leave the items on the table and walk out of the bedroom.";
 			decisions.end();
 		}
-		else if (choice == decisions[1] && decisions.size() == 3)
+		else if (choice == decisions[1] && decisions.size() == 3) //The last option with taking all of the items.
 		{
 			cout << "Looking at the pencil you decide that you might need to stab someone with it. So you slip it into the arm\n";
 			cout << "of your shirt and make sure it can quickly slide out if you need it to. Satisfied with how it feels you\n";
-			cout << "now have another choice. Do you drink the water or leave the room.\n\n";
+			cout << "now have another choice. Do you drink the water or leave the room.\n\n";			
 		}
 		else if (choice == decisions[1] && decisions.size() == 2)
 		{
 			cout << "You leave the room not sure what to expect but you feel as though you might be ready for anything. Hopefully.\n\n";
 			decisions.end();
 		}
+		else 
+		{
+			cout << "You haven't made a valid choice. Please make a decision.";			
+		}
 	}
+	
 }
