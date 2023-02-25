@@ -34,14 +34,28 @@ int RoomChoice() //Function to get the first choice
 	//Local variable
 	int choice;
 	const int CHOICE = 3;
+	string decisions[CHOICE];
+	int yourChoice = 0;
+	decisions[yourChoice++] = "1 Pick up the water.\n";
+	decisions[yourChoice++] = "2 Pick up the notepad.\n";
+	decisions[yourChoice++] = "3 Pick up the pencil.\n\n";
 
 	cout << "With the restraints loose, you are able to untie your hands and then your untie your feet.\n";
 	cout << "On the table next to the bed is a cup of water, a notepad, and a pencil. You have choices.\n";
 	cout << "What would you like to do now?\n";
 	cout << "Type what you would like to do.\n";
-	cout << "1 Pick up the water\n";
-	cout << "2 Pick up the notepad\n";
-	cout << "3 Pick up the pencil\n\n";
-	cin >> choice;
-	return choice;
+	
+	for (int i = 0; i < yourChoice; ++i)
+	{
+		cout << "1 Pick up the water\n";
+		cout << "2 Pick up the notepad\n";
+		cout << "3 Pick up the pencil\n\n";
+		cin >> choice;
+		return choice;
+
+		if (choice == 2)
+		{
+			delete 
+		}
+	}
 }

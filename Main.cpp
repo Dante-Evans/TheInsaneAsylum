@@ -42,6 +42,7 @@ void main()
 		cout << "'I am just going to call you little fish. You probably won't last a day here anyway.' He turns \n";
 		cout << "and walks away from your room leaving the door open. A moment later the restraints loosen and you\n";
 		cout << "are able to free yourself.\n\n";
+		RoomChoice();
 
 		if (roomChoices == 1)
 		{
