@@ -1,5 +1,5 @@
-/*This is the insane asylum. This is meant to demonstrate a grasp of functions.
-written and coded by: Daniel Hall*/
+//This is the insane asylum. This is meant to demonstrate a grasp of functions.
+//written and coded by: Daniel Hall
 
 #include <iostream>
 #include <string>
