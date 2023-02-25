@@ -10,13 +10,24 @@ using namespace std;
 int main()
 {
 	//local variables
+	int choices = Menu();
 	bool playAgain = true;
-	int mainMenu = Menu();
-	string roomChoices = RoomChoice();
-		
+	//int mainMenu = Menu();
+	//string roomChoices = RoomChoice();
+	
+	//if (mainMenu == 1)
+	//{
+	//	Opening();
+	//}
+	//else(Menu());
+	
 	while (playAgain)
 	{
-		Opening();
+		if (choices == 1)
+		{
+			Opening();
+		}
+		else (Menu());
 
 		cout << "\n\n'Ah I see.' The booming voice resonates through the room again. 'You don't want to tell me.'\n";
 		cout << "He chuckles and you could almost swear the whole room vibrates from the sound of his laughter.\n";
@@ -26,6 +37,7 @@ int main()
 		
 		RoomChoice();
 		
+		return false;
 	}
 	
 }

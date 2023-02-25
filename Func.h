@@ -7,6 +7,6 @@
 using namespace std;
 
 int Menu(); //The start of the game.
-string Opening(); //Begins the game after the menu.
+void Opening(); //Begins the game after the menu.
 string PlayerName(); //Gets the player's name.
 string RoomChoice(); //Gets the choice from inside the room.

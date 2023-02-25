@@ -9,39 +9,22 @@ using namespace std;
 
 int Menu() //Function for the main menu
 {
-	//I personally declare the local variables first or at least I try to.
+	//I also personally like to make a space between the variables and the code.
 	int choices;
 
-	//I also personally like to make a space between the variables and the code.
-	cout << "Welcome to The Insane Asylum.\n";
+	cout << "\t\t\tWelcome to The Insane Asylum.\n\n";
 	cout << "1 New Game\n";
 	cout << "2 Exit\n\n";
 	cin >> choices; //gets the choice made by the player.
-	return choices; //returns the choice by the player.
+	return choices; //returns the choice by the player.	
 }
 
-string Opening()
-{
-	switch (Menu())
-	{
-	case 1:
-		cout << "\nYou wake up with a start. You are laying on a bed strapped down and unable to move.\n";
-		cout << "The door opens and a man as huge as the door stands in the doorway. The shadow he casts\n";
-		cout << "obscures his face. After a long moment he begins to speak.\n";
-		PlayerName();
-		break;
-	case 2:
-		cout << "\nIt is most unfortunate that you decided to leave. Our guests were interested in using\n";
-		cout << "you as their new play toy.\n\n\n";
-		break;
-	default:
-		cout << "\nYou have made a fatal choice. The restraints tighten and pulls your arms and legs off your\n";
-		cout << "body. Blood sprays out of your body and coats the walls and the floor. You exit this world \n";
-		cout << "unsure of what awaited you.\n\n";
-		break;
-		Menu();
-	}
-	return PlayerName();
+void Opening()
+{	
+	cout << "\nYou wake up with a start. You are laying on a bed strapped down and unable to move.\n";
+	cout << "The door opens and a man as huge as the door stands in the doorway. The shadow he casts\n";
+	cout << "obscures his face. After a long moment he begins to speak.\n\n";
+	PlayerName();	
 }
 
 string PlayerName() //Function to get the player's name
@@ -68,21 +51,21 @@ string RoomChoice() //Function to get the first choice
 
 	//creating the iterators to change the vector as needed
 	vector<string>::iterator yourChoice;
-	vector<string>::const_iterator choices;
+	vector<string>::const_iterator player_choices;
 
 	cout << "With the restraints loose, you are able to untie your hands and then your untie your feet.\n";
 	cout << "On the table next to the bed is a cup of water, a notepad, and a pencil. You have choices.\n";
 	cout << "What would you like to do now?\n";
-	cout << "Type what you would like to do.\n";
-	for (choices = decisions.begin(); choices != decisions.end(); ++choices)
+	cout << "Type what you would like to do.\n\n";
+	for (player_choices = decisions.begin(); player_choices != decisions.end(); ++player_choices)
 	{
-		cout << *choices << endl;
+		cout << *player_choices << endl;
 	}
 
 	cin >> choice;
 	return choice;
 	
-	for (choices = decisions.begin(); choices != decisions.end(); ++choices) //iterates through the vector from beginning to end
+	for (player_choices = decisions.begin(); player_choices != decisions.end(); ++player_choices) //iterates through the vector from beginning to end
 	{		
 		if (choice == decisions[0]) //The first option.
 		{
