@@ -12,15 +12,7 @@ int main()
 	//local variables
 	int choices = Menu();
 	bool playAgain = true;
-	//int mainMenu = Menu();
-	//string roomChoices = RoomChoice();
-	
-	//if (mainMenu == 1)
-	//{
-	//	Opening();
-	//}
-	//else(Menu());
-	
+		
 	while (playAgain)
 	{
 		if (choices == 1)
