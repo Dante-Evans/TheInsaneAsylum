@@ -20,6 +20,30 @@ int Menu() //Function for the main menu
 	return choices; //returns the choice by the player.
 }
 
+string Opening()
+{
+	switch (Menu())
+	{
+	case 1:
+		cout << "\nYou wake up with a start. You are laying on a bed strapped down and unable to move.\n";
+		cout << "The door opens and a man as huge as the door stands in the doorway. The shadow he casts\n";
+		cout << "obscures his face. After a long moment he begins to speak.\n";
+		PlayerName();
+		break;
+	case 2:
+		cout << "\nIt is most unfortunate that you decided to leave. Our guests were interested in using\n";
+		cout << "you as their new play toy.\n\n\n";
+		break;
+	default:
+		cout << "\nYou have made a fatal choice. The restraints tighten and pulls your arms and legs off your\n";
+		cout << "body. Blood sprays out of your body and coats the walls and the floor. You exit this world \n";
+		cout << "unsure of what awaited you.\n\n";
+		break;
+		Menu();
+	}
+	return PlayerName();
+}
+
 string PlayerName() //Function to get the player's name
 {
 	//local variable
@@ -50,13 +74,16 @@ string RoomChoice() //Function to get the first choice
 	cout << "On the table next to the bed is a cup of water, a notepad, and a pencil. You have choices.\n";
 	cout << "What would you like to do now?\n";
 	cout << "Type what you would like to do.\n";
+	for (choices = decisions.begin(); choices != decisions.end(); ++choices)
+	{
+		cout << *choices << endl;
+	}
+
+	cin >> choice;
+	return choice;
 	
 	for (choices = decisions.begin(); choices != decisions.end(); ++choices) //iterates through the vector from beginning to end
-	{
-		cout << *choices << endl; //displays the choices that you can choose from.
-		cin >> choice;
-		return choice;
-
+	{		
 		if (choice == decisions[0]) //The first option.
 		{
 			cout << "You pick up the glass of water. You take a sip of water. As the water hits your tongue, you realize\n";
