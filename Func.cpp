@@ -42,7 +42,7 @@ string PlayerName() //Function to get the player's name
 void RoomChoice() //Function to get the first choice
 {
 	//Local variable
-	string choice;	
+	string choice;
 	vector <string> decisions;	//declaring my decisions vector
 	decisions.push_back("Pick up the water."); //pushing this item into the vector.
 	decisions.push_back("Pick up the notepad."); //pushing this item into the vector.
@@ -66,53 +66,88 @@ void RoomChoice() //Function to get the first choice
 	
 	for (player_choices = decisions.begin(); player_choices != decisions.end(); ++player_choices) //iterates through the vector from beginning to end
 	{		
-		if (choice == "water") //The first option.
+		while (player_choices != decisions.end())
 		{
-			cout << "You pick up the glass of water. You take a sip of water. As the water hits your tongue, you realize\n";
-			cout << "that you were extremely thirsty. You don't know how long you have been unconscious. The water soothes\n";
-			cout << "your throat going down. Your stomach however, revolts against the water. You drop the glass and are\n";
-			cout << "doubled over in pain. Your eyes begin to water as you drop to your knees. You wipe the tears from \n";
-			cout << "your eyes but there is blood on your finger tips. The sudden realization hits you. Poison. You drop \n";
-			cout << "to the floor and begin convulsing. The last thing you hear is your neck snapping as it hits the side\n";
-			cout << "of the bed.\n\n";
-			Menu();
-		}
-		else if (choice == "notepad" && decisions.size() == 4) //The second option
-		{
-			cout << "You aren't sure why you would need the notepad but you decide to take it anyway. You slide the notepad\n";
-			cout << "into the waist band of your pants and try to conceal it. Satisfied with your choice you look at the pencil.\n";
-			cout << "Then you look at the water before looking at the door.\n";
-			decisions.erase((decisions.begin() + 1));
-			cin >> choice;			
-		}
-		else if (choice == "pencil" && decisions.size() == 4) //The third option
-		{
-			cout << "You decided to grab the pencil. You aren't exactly sure why you would need it but you slip it into the arm\n";
-			cout << "of your shirt. You thought about using the pencil to write on the notepad but you couldn't think of anything\n";
-			cout << "to write. You still have a choice. Grab the notepad, drink the water, or leave the room. What do you choose?\n\n";
-			cin >> choice;
-		}
-		else if (choice == "door" && decisions.size() == 4) //The last option without taking any of the items.
-		{
-			cout << "You decided to leave the items on the table and walk out of the bedroom.";
-			decisions.end();
-		}
-		else if (choice == "notepad" && decisions.size() == 3) //The last option with taking all of the items.
-		{
-			cout << "Looking at the pencil you decide that you might need to stab someone with it. So you slip it into the arm\n";
-			cout << "of your shirt and make sure it can quickly slide out if you need it to. Satisfied with how it feels you\n";
-			cout << "now have another choice. Do you drink the water or leave the room.\n\n";
-			cin >> choice;
-		}
-		else if (choice == "door" && decisions.size() == 2)
-		{
-			cout << "You leave the room not sure what to expect but you feel as though you might be ready for anything. Hopefully.\n\n";
-			decisions.end();
-		}
-		else 
-		{
-			cout << "You haven't made a valid choice. Please make a decision.";	
-			cin >> choice;
+			if (choice == "water" && decisions.size() == 4) //The first option.
+			{
+				cout << "You pick up the glass of water. You take a sip of water. As the water hits your tongue, you realize\n";
+				cout << "that you were extremely thirsty. You don't know how long you have been unconscious. The water soothes\n";
+				cout << "your throat going down. Your stomach however, revolts against the water. You drop the glass and are\n";
+				cout << "doubled over in pain. Your eyes begin to water as you drop to your knees. You wipe the tears from \n";
+				cout << "your eyes but there is blood on your finger tips. The sudden realization hits you. Poison. You drop \n";
+				cout << "to the floor and begin convulsing. The last thing you hear is your neck snapping as it hits the side\n";
+				cout << "of the bed.\n\n";
+				player_choices = decisions.end();				
+			}
+			else if (choice == "notepad" && decisions.size() == 4) //The second option
+			{
+				cout << "You aren't sure why you would need the notepad but you decide to take it anyway. You slide the notepad\n";
+				cout << "into the waist band of your pants and try to conceal it. Satisfied with your choice you look at the pencil.\n";
+				cout << "Then you look at the water before looking at the door.\n\n";
+				decisions.erase((decisions.begin() + 1));
+				cin >> choice;
+			}
+			else if (choice == "pencil" && decisions.size() == 4) //The third option
+			{
+				cout << "You decided to grab the pencil. You aren't exactly sure why you would need it but you slip it into the arm\n";
+				cout << "of your shirt. You thought about using the pencil to write on the notepad but you couldn't think of anything\n";
+				cout << "to write. You still have a choice. Grab the notepad, drink the water, or leave the room. What do you choose?\n\n";
+				decisions.erase((decisions.begin() + 2));
+				cin >> choice;
+			}
+			else if (choice == "door" && decisions.size() == 4) //The last option without taking any of the items.
+			{
+				cout << "You decided to leave the items on the table and walk out of the bedroom.\n\n";
+				decisions.end();
+			}
+			else if (choice == "notepad" && decisions.size() == 3) //The last option with taking all of the items.
+			{
+				cout << "You now have the notepad and the pencil. These two things could come in handy later though you aren't sure\n";
+				cout << "how. Eitherway you have them. Now you must decide if you are going to drink the water or leave the room.\n";
+				cout << "Do you drink the water or leave the room.\n\n";
+				decisions.erase((decisions.begin() + 1));
+				cin >> choice;
+			}
+			else if (choice == "pencil" && decisions.size() == 3) //The third option
+			{
+				cout << "You decided to grab the pencil. You aren't exactly sure why you would need it but you slip it into the arm\n";
+				cout << "of your shirt. You thought about using the pencil to write on the notepad but you couldn't think of anything\n";
+				cout << "to write. You still have a choice. Drink the water, or leave the room. What do you choose?\n\n";
+				decisions.erase((decisions.begin() + 1));
+				cin >> choice;
+			}
+			else if (choice == "water" && decisions.size() == 3)
+			{
+				cout << "You pick up the glass of water. You take a sip of water. As the water hits your tongue, you realize\n";
+				cout << "that you were extremely thirsty. You don't know how long you have been unconscious. The water soothes\n";
+				cout << "your throat going down. Your stomach however, revolts against the water. You drop the glass and are\n";
+				cout << "doubled over in pain. Your eyes begin to water as you drop to your knees. You wipe the tears from \n";
+				cout << "your eyes but there is blood on your finger tips. The sudden realization hits you. Poison. You drop \n";
+				cout << "to the floor and begin convulsing. The last thing you hear is your neck snapping as it hits the side\n";
+				cout << "of the bed.\n\n";
+				player_choices = decisions.end();				
+			}
+			else if (choice == "water" && decisions.size() == 2)
+			{
+				cout << "You pick up the glass of water. You take a sip of water. As the water hits your tongue, you realize\n";
+				cout << "that you were extremely thirsty. You don't know how long you have been unconscious. The water soothes\n";
+				cout << "your throat going down. Your stomach however, revolts against the water. You drop the glass and are\n";
+				cout << "doubled over in pain. Your eyes begin to water as you drop to your knees. You wipe the tears from \n";
+				cout << "your eyes but there is blood on your finger tips. The sudden realization hits you. Poison. You drop \n";
+				cout << "to the floor and begin convulsing. The last thing you hear is your neck snapping as it hits the side\n";
+				cout << "of the bed.\n\n";
+				player_choices = decisions.end();				
+			}
+			else if (choice == "door" && decisions.size() == 2)
+			{
+				cout << "You leave the room not sure what to expect but you feel as though you might be ready for anything. Hopefully.\n\n";
+				player_choices = decisions.end();
+			}
+			else
+			{
+				cout << "You haven't made a valid choice. Please make a decision.\n\n";
+				cin >> choice;
+			}
 		}
 	}
 	
