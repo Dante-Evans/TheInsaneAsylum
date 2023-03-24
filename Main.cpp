@@ -28,6 +28,14 @@ int main()
 		cout << "are able to free yourself.\n\n";
 		
 		RoomChoice();
+
+		cout << "You walk out of your room and find that the hallway is filled with bodies lining the hall\n";
+		cout << "You pull out your pencil and your notepad and begin to describe what you have witnessed so far.\n";
+		cout << "As you begin to write you suddenly can't feel your finger tips.\n";
+		cout << "Your vision begins to blur and your head begins to swim.\n";
+		cout << "The next thing you know you get the feeling you are being wheeled down a corridor but you can't \n";
+		cout << "see anything at all. The cart jerks and you hear a man curse in some foreign language.\n";
+		cout << "The man then says 'These will make good food for my pet.' Then he chuckles.\n";
 		
 		return false;
 	}

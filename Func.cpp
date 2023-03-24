@@ -39,7 +39,7 @@ string PlayerName() //Function to get the player's name
 	return name; //returns the name of the player.
 }
 
-void RoomChoice() //Function to get the first choice
+bool RoomChoice() //Function to get the first choice
 {
 	//Local variable
 	string choice;
@@ -64,9 +64,9 @@ void RoomChoice() //Function to get the first choice
 	cout << "Type the last word of the choice to decide what to do.\n";
 	cin >> choice;	
 	
-	for (player_choices = decisions.begin(); player_choices != decisions.end(); ++player_choices) //iterates through the vector from beginning to end
+	for (int i = 0;i < 4; i++) //iterates through the vector from beginning to end
 	{		
-		while (player_choices != decisions.end())
+		while (i != decisions.size())
 		{
 			if (choice == "water" && decisions.size() == 4) //The first option.
 			{
@@ -77,7 +77,8 @@ void RoomChoice() //Function to get the first choice
 				cout << "your eyes but there is blood on your finger tips. The sudden realization hits you. Poison. You drop \n";
 				cout << "to the floor and begin convulsing. The last thing you hear is your neck snapping as it hits the side\n";
 				cout << "of the bed.\n\n";
-				player_choices = decisions.end();				
+				i = 4;
+				return Menu();
 			}
 			else if (choice == "notepad" && decisions.size() == 4) //The second option
 			{
@@ -98,7 +99,7 @@ void RoomChoice() //Function to get the first choice
 			else if (choice == "door" && decisions.size() == 4) //The last option without taking any of the items.
 			{
 				cout << "You decided to leave the items on the table and walk out of the bedroom.\n\n";
-				decisions.end();
+				i = decisions.size();
 			}
 			else if (choice == "notepad" && decisions.size() == 3) //The last option with taking all of the items.
 			{
@@ -125,7 +126,8 @@ void RoomChoice() //Function to get the first choice
 				cout << "your eyes but there is blood on your finger tips. The sudden realization hits you. Poison. You drop \n";
 				cout << "to the floor and begin convulsing. The last thing you hear is your neck snapping as it hits the side\n";
 				cout << "of the bed.\n\n";
-				player_choices = decisions.end();				
+				i = 4;		
+				return Menu();
 			}
 			else if (choice == "water" && decisions.size() == 2)
 			{
@@ -136,7 +138,8 @@ void RoomChoice() //Function to get the first choice
 				cout << "your eyes but there is blood on your finger tips. The sudden realization hits you. Poison. You drop \n";
 				cout << "to the floor and begin convulsing. The last thing you hear is your neck snapping as it hits the side\n";
 				cout << "of the bed.\n\n";
-				player_choices = decisions.end();				
+				i = 4;		
+				return Menu();
 			}
 			else if (choice == "door" && decisions.size() == 2)
 			{
@@ -148,7 +151,41 @@ void RoomChoice() //Function to get the first choice
 				cout << "You haven't made a valid choice. Please make a decision.\n\n";
 				cin >> choice;
 			}
-		}
+		}		
+	}	
+}
+
+void CartChoice()
+{
+	string choice; //Get the choice of the player.
+	int stab; //This is going to be how many times you stab the person.
+
+	cout << "You have a choice to make.\n";
+	cout << "You could either stay hidden on the cart or you could fight back to try to save you life.\n";
+	cout << "Type 'hide' to stay hidden or 'fight' to fight back.";
+	cin >> choice;
+	cout << "You have decided to " << choice << ".";
+
+	if (choice == "hide")
+	{
+		cout << "You have decided to hide. The cart continues on for what seems like an hour. You suddenly realize\n";
+		cout << "that you have to go to the bathroom. Just as the thought crosses your mind you begin to urinate on \n";
+		cout << "yourself. The man suddenly stops the cart and starts coughing. You hear him retch up his guts to your\n";
+		cout << "right. The smell of his stomach contents becomes to great for you. You trhow yourself off to the left\n";
+		cout << "of the cart and begin retch up clear water. As you finish, you notice the man has finished also and is\n";
+		cout << "looking at you in bewilderment. You compose yourself enough to make a run for it in the opposite \n";
+		cout << "direction.";
 	}
-	
+	else if (choice == "fight")
+	{
+		cout << "You slip the pencil out of your sleeve and place your thumb over the ereaser ready to stab the \n";
+		cout << "man. You throw whatever is on top of you in his direction to disorient him.\n";
+		cout << "However, the man had stopped to insert a key card and the body that you threw fell to the ground \n";
+		cout << "harmlessly. The man is big and quick, his hand wraps around your throat and crushes your windpipe.\n";
+		cout << "You did manage to stab the man in the forearm before your vison goes black and your arms go limp at \n";
+		cout << "your side.\n";
+		cout << "The next thing you know your arm is being consumed by some horrendous creature. The creature notices\n";
+		cout << "Your eyes open and quickly chomps down on your head crushing your skull like a watermelon.\n";
+
+	}
 }
