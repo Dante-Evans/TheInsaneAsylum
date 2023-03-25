@@ -144,7 +144,8 @@ bool RoomChoice() //Function to get the first choice
 			else if (choice == "door" && decisions.size() == 2)
 			{
 				cout << "You leave the room not sure what to expect but you feel as though you might be ready for anything. Hopefully.\n\n";
-				player_choices = decisions.end();
+				i = 4;
+				return true;
 			}
 			else
 			{
@@ -155,7 +156,7 @@ bool RoomChoice() //Function to get the first choice
 	}	
 }
 
-void CartChoice()
+bool CartChoice()
 {
 	string choice; //Get the choice of the player.
 	int stab; //This is going to be how many times you stab the person.
@@ -186,6 +187,6 @@ void CartChoice()
 		cout << "your side.\n";
 		cout << "The next thing you know your arm is being consumed by some horrendous creature. The creature notices\n";
 		cout << "Your eyes open and quickly chomps down on your head crushing your skull like a watermelon.\n";
-
+		return true;
 	}
 }

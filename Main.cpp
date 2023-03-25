@@ -36,6 +36,24 @@ int main()
 		cout << "The next thing you know you get the feeling you are being wheeled down a corridor but you can't \n";
 		cout << "see anything at all. The cart jerks and you hear a man curse in some foreign language.\n";
 		cout << "The man then says 'These will make good food for my pet.' Then he chuckles.\n";
+
+		CartChoice();
+
+		cout << "to be continued.\n\n";
+
+		string whyNot;
+
+		cout << "Would you like to play again?\n";
+		cout << "Type yes to play again or type no to exit.\n";
+		cin >> whyNot;
+		if (whyNot == "yes")
+		{
+			Opening();
+		}
+		else(whyNot == "no");
+		{
+			return false;
+		}
 		
 		return false;
 	}
